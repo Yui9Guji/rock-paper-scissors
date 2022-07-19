@@ -7,6 +7,44 @@
    <title>Document</title>
 </head>
 <body>
-   <script src="game.js"></script>
+   <script>
+
+      const gameExecute = () => {
+
+         const variables = ['rock', 'paper', 'scissors']
+         const computerChoice = variables[Math.floor(Math.random() * variables.length)]
+
+         const playerChoice = prompt('Rock | Paper | Scissors').toLowerCase()
+
+         
+         console.log(`The computer's choice is ${computerChoice}`)
+         console.log(`The player's choice is ${playerChoice}`)
+
+         switch (computerChoice) {
+            
+            case 'paper':
+               if (playerChoice == 'paper') console.log('DRAW!')
+               else if (playerChoice == 'rock') console.log('Computer wins!')
+               else console.log('Player wins!')
+               break
+
+            case 'rock':
+               if (playerChoice == 'rock') console.log('DRAW!')
+               else if (playerChoice == 'scissors') console.log('Computer wins!')
+               else console.log('Player wins!')
+               break
+            
+            case 'scissors':
+               if (playerChoice == 'scissors') console.log('DRAW!')
+               else if (playerChoice == 'paper') console.log('Computer wins!')
+               else console.log('Player wins!')
+               break
+               
+         }
+      }
+
+      gameExecute()
+
+   </script>
 </body>
 </html>
