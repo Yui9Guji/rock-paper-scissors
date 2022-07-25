@@ -6,9 +6,7 @@ const gameExecute = () => {
 
    const variables = ['rock', 'paper', 'scissors']
    const computerChoice = variables[Math.floor(Math.random() * variables.length)]
-
-   const playerChoice = prompt('Rock | Paper | Scissors').toLowerCase()
-
+   
    switch (computerChoice) {
 
       case 'paper':
@@ -62,9 +60,11 @@ const gameExecute = () => {
    }
 }
 
-   for (let i = 0; i < 5; i++) {
-      gameVar()
-   }
+   gameVar()
+
+   // for (let i = 0; i < 5; i++) {
+   //    gameVar()
+   // }
 
    console.log(`The player's score is: ${playerScore}\nThe computer's score is: ${computerScore}`)
 
