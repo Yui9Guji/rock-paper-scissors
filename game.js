@@ -11,7 +11,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
          const variables = ['rock', 'paper', 'scissors']
          const computerChoice = variables[Math.floor(Math.random() * variables.length)]
             
-         if (clickTimes != 5) {
+         if (clickTimes < 5) {
             switch (computerChoice) {
          
                case 'paper':
@@ -139,12 +139,20 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                      break
                      
             }
+            console.log(clickTimes)
          }
-         else {
+         else if (clickTimes == 5){
             button.removeEventListener('click', gameVar)
 
             const gameEnding = document.createElement('p')
-            gameEnding.textContent = 'Computer wins! Paper beats Rock!'
+            if (playerScore > computerScore) {
+               gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nPlayer WINS!`
+            }
+
+            else {
+               gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nComputer WINS!`
+            }
+            
             gameEnding.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
             const gameDiv = document.querySelector('.game')
@@ -156,4 +164,4 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
       
 };
 
-gameVar(0)
+gameVar(0, 0, 0)
