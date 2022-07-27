@@ -27,6 +27,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         gameDiv.appendChild(result)
 
                         clickTimes++
+                        computerScore++
                      }
          
                      else if (playerChoice == 'scissors') {
@@ -40,6 +41,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         gameDiv.appendChild(result)
 
                         clickTimes++
+                        playerScore++
                      }
                      else {
                         const result = document.createElement('p')
@@ -67,6 +69,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         gameDiv.appendChild(result)
 
                         clickTimes++
+                        computerScore++
                      }
          
                      else if (playerChoice == 'paper') {
@@ -80,6 +83,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         gameDiv.appendChild(result)
 
                         clickTimes++
+                        playerScore++
                      }
                      else {
                         // console.log('TIE!')
@@ -109,6 +113,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         gameDiv.appendChild(result)
 
                         clickTimes++
+                        computerScore++
                      }
          
                      else if (playerChoice == 'rock') {
@@ -122,6 +127,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         gameDiv.appendChild(result)
 
                         clickTimes++
+                        playerScore++
                      }
                      else {
                         // console.log('TIE!')
@@ -149,11 +155,15 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                      gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nPlayer WINS!`
                   }
 
-                  else {
+                  else if (playerScore < computerScore) {
                      gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nComputer WINS!`
                   }
+
+                  else {
+                     gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nTIE!`
+                  }
                   
-                  gameEnding.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
+                  gameEnding.style.cssText = 'color: #000000; font-size: 48px; font-family: "Sora";'
                               
                   const gameDiv = document.querySelector('.game')
                   gameDiv.appendChild(gameEnding)
