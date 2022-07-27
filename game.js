@@ -1,11 +1,14 @@
 const gameExecute = () => {
+
    let playerScore = 0
    let computerScore = 0
 
    const gameVar = () => {
 
+
       const buttons = document.querySelectorAll('button')
       buttons.forEach((button) => {
+         
          button.addEventListener('click', () => {
 
             const playerChoice = button.textContent.toLowerCase()
@@ -17,7 +20,9 @@ const gameExecute = () => {
                case 'paper':
       
                   if (playerChoice == 'rock') {
-                     console.log('Computer wins! Paper beats Rock!')
+                     // console.log('Computer wins! Paper beats Rock!');
+                     const result = document.createElement('p')
+                     document
                      computerScore += 1
                   }
       
