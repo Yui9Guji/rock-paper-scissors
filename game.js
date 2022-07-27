@@ -139,25 +139,44 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                      break
                      
             }
-            console.log(clickTimes)
-         }
-         else if (clickTimes == 5){
-            button.removeEventListener('click', gameVar)
-
-            const gameEnding = document.createElement('p')
-            if (playerScore > computerScore) {
-               gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nPlayer WINS!`
-            }
-
-            else {
-               gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nComputer WINS!`
-            }
             
-            gameEnding.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
+            switch (clickTimes) {
+               case 5:
+                  button.removeEventListener('click', gameVar)
+
+                  const gameEnding = document.createElement('p')
+                  if (playerScore > computerScore) {
+                     gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nPlayer WINS!`
+                  }
+
+                  else {
+                     gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nComputer WINS!`
+                  }
+                  
+                  gameEnding.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
+                              
+                  const gameDiv = document.querySelector('.game')
+                  gameDiv.appendChild(gameEnding)
+            }
+         }
+
+         // else if (clickTimes == 5){
+         //    button.removeEventListener('click', gameVar)
+
+         //    const gameEnding = document.createElement('p')
+         //    if (playerScore > computerScore) {
+         //       gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nPlayer WINS!`
+         //    }
+
+         //    else {
+         //       gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nComputer WINS!`
+         //    }
+            
+         //    gameEnding.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
-            const gameDiv = document.querySelector('.game')
-            gameDiv.appendChild(gameEnding)
-         }  
+         //    const gameDiv = document.querySelector('.game')
+         //    gameDiv.appendChild(gameEnding)
+         // }  
       })
    })
          
