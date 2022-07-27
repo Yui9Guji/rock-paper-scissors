@@ -1,0 +1,26 @@
+body {
+   background-color: aquamarine;
+}
+
+.game {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.buttons {
+   display: flex;
+   justify-content: center;
+   gap: 32px;
+}
+
+button {
+   background-color: black;
+   color: antiquewhite;
+   border-radius: 16px;
+   padding: 32px;
+   font-size: 32px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+

@@ -20,6 +20,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         // console.log('Computer wins! Paper beats Rock!');
 
                         const result = document.createElement('p')
+                        result.className = 'result'
                         result.textContent = 'Computer wins! Paper beats Rock!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
@@ -34,6 +35,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         // console.log('You win! Scissors beat Paper!')
 
                         const result = document.createElement('p')
+                        result.className = 'result'
                         result.textContent = 'You win! Scissors beat Paper!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
@@ -45,6 +47,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                      }
                      else {
                         const result = document.createElement('p')
+                        result.className = 'result'
                         result.textContent = 'TIE!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
@@ -62,6 +65,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         // console.log('Computer wins! Rock beats Scissors!')
 
                         const result = document.createElement('p')
+                        result.className = 'result'
                         result.textContent = 'Computer wins! Rock beats Scissors!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
@@ -76,6 +80,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         // console.log('You win! Paper beats Rock!')
 
                         const result = document.createElement('p')
+                        result.className = 'result'
                         result.textContent = 'You win! Paper beats Rock!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
@@ -89,6 +94,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         // console.log('TIE!')
 
                         const result = document.createElement('p')
+                        result.className = 'result'
                         result.textContent = 'TIE!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
@@ -106,6 +112,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         // console.log('Computer wins! Scissors beat Paper!')
 
                         const result = document.createElement('p')
+                        result.className = 'result'
                         result.textContent = 'Computer wins! Scissors beat Paper!!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
@@ -120,6 +127,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         // console.log('You win! Rock beats Scissors!')
 
                         const result = document.createElement('p')
+                        result.className = 'result'
                         result.textContent = 'You win! Rock beats Scissors!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
@@ -133,6 +141,7 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         // console.log('TIE!')
                         
                         const result = document.createElement('p')
+                        result.className = 'result'
                         result.textContent = 'TIE!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
