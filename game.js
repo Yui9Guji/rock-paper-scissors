@@ -22,8 +22,11 @@ const gameExecute = () => {
                   if (playerChoice == 'rock') {
                      // console.log('Computer wins! Paper beats Rock!');
                      const result = document.createElement('p')
-                     document
-                     computerScore += 1
+                     result.textContent = 'Computer wins! Paper beats Rock!'
+                     result.style.cssText = 'color: '
+                     const gameDiv = document.querySelector('.game')
+                     gameDiv.appendChild(result)
+
                   }
       
                   else if (playerChoice == 'scissors') {
