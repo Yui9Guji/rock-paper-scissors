@@ -23,9 +23,8 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         result.className = 'result'
                         result.textContent = 'Computer wins! Paper beats Rock!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        
-                        const gameDiv = document.querySelector('.game')
-                        gameDiv.appendChild(result)
+                        const screenText = document.querySelector('.text')
+                        screenText.appendChild(result)
 
                         clickTimes++
                         computerScore++
@@ -39,8 +38,8 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         result.textContent = 'You win! Scissors beat Paper!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
-                        const gameDiv = document.querySelector('.game')
-                        gameDiv.appendChild(result)
+                        const screenText = document.querySelector('.text')
+                        screenText.appendChild(result)
 
                         clickTimes++
                         playerScore++
@@ -51,8 +50,8 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         result.textContent = 'TIE!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
-                        const gameDiv = document.querySelector('.game')
-                        gameDiv.appendChild(result)
+                        const screenText = document.querySelector('.text')
+                        screenText.appendChild(result)
 
                         clickTimes++
                      }
@@ -69,8 +68,8 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         result.textContent = 'Computer wins! Rock beats Scissors!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
-                        const gameDiv = document.querySelector('.game')
-                        gameDiv.appendChild(result)
+                        const screenText = document.querySelector('.text')
+                        screenText.appendChild(result)
 
                         clickTimes++
                         computerScore++
@@ -84,8 +83,8 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         result.textContent = 'You win! Paper beats Rock!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
-                        const gameDiv = document.querySelector('.game')
-                        gameDiv.appendChild(result)
+                        const screenText = document.querySelector('.text')
+                        screenText.appendChild(result)
 
                         clickTimes++
                         playerScore++
@@ -98,8 +97,8 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         result.textContent = 'TIE!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
-                        const gameDiv = document.querySelector('.game')
-                        gameDiv.appendChild(result)
+                        const screenText = document.querySelector('.text')
+                        screenText.appendChild(result)
 
                         clickTimes++
                      }
@@ -116,8 +115,8 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         result.textContent = 'Computer wins! Scissors beat Paper!!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
-                        const gameDiv = document.querySelector('.game')
-                        gameDiv.appendChild(result)
+                        const screenText = document.querySelector('.text')
+                        screenText.appendChild(result)
 
                         clickTimes++
                         computerScore++
@@ -131,8 +130,8 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         result.textContent = 'You win! Rock beats Scissors!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
-                        const gameDiv = document.querySelector('.game')
-                        gameDiv.appendChild(result)
+                        const screenText = document.querySelector('.text')
+                        screenText.appendChild(result)
 
                         clickTimes++
                         playerScore++
@@ -145,8 +144,8 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                         result.textContent = 'TIE!'
                         result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
                         
-                        const gameDiv = document.querySelector('.game')
-                        gameDiv.appendChild(result)
+                        const screenText = document.querySelector('.text')
+                        screenText.appendChild(result)
 
                         clickTimes++
                      }
@@ -174,28 +173,10 @@ const gameVar = (clickTimes, computerScore, playerScore) => {
                   
                   gameEnding.style.cssText = 'color: #000000; font-size: 48px; font-family: "Sora";'
                               
-                  const gameDiv = document.querySelector('.game')
-                  gameDiv.appendChild(gameEnding)
+                  const screenText = document.querySelector('.game')
+                  screenText.appendChild(gameEnding)
             }
          }
-
-         // else if (clickTimes == 5){
-         //    button.removeEventListener('click', gameVar)
-
-         //    const gameEnding = document.createElement('p')
-         //    if (playerScore > computerScore) {
-         //       gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nPlayer WINS!`
-         //    }
-
-         //    else {
-         //       gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nComputer WINS!`
-         //    }
-            
-         //    gameEnding.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        
-         //    const gameDiv = document.querySelector('.game')
-         //    gameDiv.appendChild(gameEnding)
-         // }  
       })
    })
          
