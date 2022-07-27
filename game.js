@@ -1,186 +1,109 @@
-const gameVar = (clickTimes, computerScore, playerScore) => {
-
-
+const gameExe = (round, playerScore, computerScore) => {
+   
    const buttons = document.querySelectorAll('button')
 
    buttons.forEach((button) => {
-         
+
       button.addEventListener('click', () => {
 
-         const playerChoice = button.textContent.toLowerCase()
          const variables = ['rock', 'paper', 'scissors']
+         
+         const playerChoice = button.textContent.toLowerCase()
+
          const computerChoice = variables[Math.floor(Math.random() * variables.length)]
-            
-         if (clickTimes < 5) {
+
+
+         const winner = document.querySelector('.winner')
+
+         let webPlayer = document.querySelector('.player-score')
+
+         let webComputer = document.querySelector('.computer-score')
+
+         if (round < 5) {
+
             switch (computerChoice) {
-         
-               case 'paper':
-         
-                     if (playerChoice == 'rock') {
-                        // console.log('Computer wins! Paper beats Rock!');
 
-                        const result = document.createElement('p')
-                        result.className = 'result'
-                        result.textContent = 'Computer wins! Paper beats Rock!'
-                        result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        const screenText = document.querySelector('.text')
-                        screenText.appendChild(result)
-
-                        clickTimes++
-                        computerScore++
-                     }
-         
-                     else if (playerChoice == 'scissors') {
-                        // console.log('You win! Scissors beat Paper!')
-
-                        const result = document.createElement('p')
-                        result.className = 'result'
-                        result.textContent = 'You win! Scissors beat Paper!'
-                        result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        
-                        const screenText = document.querySelector('.text')
-                        screenText.appendChild(result)
-
-                        clickTimes++
-                        playerScore++
-                     }
-                     else {
-                        const result = document.createElement('p')
-                        result.className = 'result'
-                        result.textContent = 'TIE!'
-                        result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        
-                        const screenText = document.querySelector('.text')
-                        screenText.appendChild(result)
-
-                        clickTimes++
-                     }
-
-                     break
-         
                case 'rock':
-         
-                     if (playerChoice == 'scissors') {
-                        // console.log('Computer wins! Rock beats Scissors!')
+                  if (playerChoice === 'rock') {
 
-                        const result = document.createElement('p')
-                        result.className = 'result'
-                        result.textContent = 'Computer wins! Rock beats Scissors!'
-                        result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        
-                        const screenText = document.querySelector('.text')
-                        screenText.appendChild(result)
-
-                        clickTimes++
-                        computerScore++
-                     }
-         
-                     else if (playerChoice == 'paper') {
-                        // console.log('You win! Paper beats Rock!')
-
-                        const result = document.createElement('p')
-                        result.className = 'result'
-                        result.textContent = 'You win! Paper beats Rock!'
-                        result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        
-                        const screenText = document.querySelector('.text')
-                        screenText.appendChild(result)
-
-                        clickTimes++
-                        playerScore++
-                     }
-                     else {
-                        // console.log('TIE!')
-
-                        const result = document.createElement('p')
-                        result.className = 'result'
-                        result.textContent = 'TIE!'
-                        result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        
-                        const screenText = document.querySelector('.text')
-                        screenText.appendChild(result)
-
-                        clickTimes++
-                     }
-
-                     break
-                  
-               case 'scissors':
-         
-                     if (playerChoice == 'paper') {
-                        // console.log('Computer wins! Scissors beat Paper!')
-
-                        const result = document.createElement('p')
-                        result.className = 'result'
-                        result.textContent = 'Computer wins! Scissors beat Paper!!'
-                        result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        
-                        const screenText = document.querySelector('.text')
-                        screenText.appendChild(result)
-
-                        clickTimes++
-                        computerScore++
-                     }
-         
-                     else if (playerChoice == 'rock') {
-                        // console.log('You win! Rock beats Scissors!')
-
-                        const result = document.createElement('p')
-                        result.className = 'result'
-                        result.textContent = 'You win! Rock beats Scissors!'
-                        result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        
-                        const screenText = document.querySelector('.text')
-                        screenText.appendChild(result)
-
-                        clickTimes++
-                        playerScore++
-                     }
-                     else {
-                        // console.log('TIE!')
-                        
-                        const result = document.createElement('p')
-                        result.className = 'result'
-                        result.textContent = 'TIE!'
-                        result.style.cssText = 'color: #d90429; font-size: 24px; font-family: "Sora";'
-                        
-                        const screenText = document.querySelector('.text')
-                        screenText.appendChild(result)
-
-                        clickTimes++
-                     }
-
-                     break
+                     winner.textContent = 'TIE!'
                      
-            }
-            
-            switch (clickTimes) {
-               case 5:
-                  button.removeEventListener('click', gameVar)
+                     round++
+                  }
+                  else if (playerChoice === 'paper') {
 
-                  const gameEnding = document.createElement('p')
-                  if (playerScore > computerScore) {
-                     gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nPlayer WINS!`
+                     winner.textContent = 'Paper beats rock! You won!'
+
+                     webPlayer.textContent = `Player's score: ${playerScore++}`
+
+                     round++
+                     
+                  }
+                  else if (playerChoice === 'scissors') {
+                     
+                     winner.textContent = 'Scissors are beaten by rock! You lost!'
+
+                     webComputer.textContent = `Computer's score: ${computerScore++}`
+
+                     round++
+
                   }
 
-                  else if (playerScore < computerScore) {
-                     gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nComputer WINS!`
-                  }
+               case 'paper':
+                  if (playerChoice === 'paper') {
 
-                  else {
-                     gameEnding.textContent = `The score is ${playerScore}:${computerScore}!\nTIE!`
+                     winner.textContent = 'TIE!'
+
+                     round++
                   }
-                  
-                  gameEnding.style.cssText = 'color: #000000; font-size: 48px; font-family: "Sora";'
-                              
-                  const screenText = document.querySelector('.game')
-                  screenText.appendChild(gameEnding)
+                  else if (playerChoice === 'scissors') {
+
+                     winner.textContent = 'Scissors beat paper! You won!'
+                     webPlayer.textContent = `Player's score: ${playerScore++}`
+
+                     round++
+                     
+                  }
+                  else if (playerChoice === 'rock') {
+                     
+                     winner.textContent = 'Rock is beaten by paper! You lost!'
+
+                     webComputer.textContent = `Computer's score: ${computerScore++}`
+
+                     round++
+                  } 
+
+               case 'scissors':
+                  if (playerChoice === 'rock') {
+
+                     winner.textContent = 'TIE!'
+
+                     round++
+
+                  }
+                  else if (playerChoice === 'rock') {
+
+                     winner.textContent = 'Rock beats scissors! You won!'
+
+                     webPlayer.textContent = `Player's score: ${playerScore++}`
+
+                     round++
+                     
+                  }
+                  else if (playerChoice === 'paper') {
+                     
+                     winner.textContent = 'Paper is beaten by scissors! You lost!'
+
+                     webComputer.textContent = `Computer's score: ${computerScore++}`
+
+                     round++
+
+                  }    
             }
          }
-      })
-   })
          
-      
-};
+      }) 
+   })
+}
 
-gameVar(0, 0, 0)
+gameExe(0, 0, 0)
