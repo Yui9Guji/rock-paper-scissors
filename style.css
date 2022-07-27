@@ -1,34 +1,88 @@
 body {
-   background-color: aquamarine;
-   padding: 0;
    margin: 0;
+   padding: 0;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+a {
+   text-decoration: none;
+   color: white;
+   font-style: italic;
+}
+
+button {
+   border-radius: 32px;
+   padding: 128px;
+   font-size: 64px;
+   font-size: bold;
+   background-color: #264653;
+   color: white;
+   border-color: white;
+
+   display: flex;
+   flex: 1;
+   align-items: center;
+   justify-content: center;
+}
+
+.heading {
+   display: flex;
+   justify-content: center;
+   background-color: #264653;
+   color: white;
+   padding-top: 32px;
+   padding-bottom: 32px;
+   font-size: 48px;
+   font-weight: bold;
 }
 
 .game {
    display: flex;
+   flex: 1;
    flex-direction: column;
-   align-items: center;
+   background-color: #ccd5ae;
+}
+
+.winner {
+   display: flex;
+   justify-content: center;
+   color: #6c584c;
+   font-weight: 900;
+   font-size: 36px;
+   margin-top: 16px;
+   margin-bottom: 16px;
+}
+
+.score {
+   display: flex;
+   justify-content: space-around;
+   color: #9d8189;
+   font-weight: 900;
+   font-size: 24px;
+   margin-top: 16px;
+   margin-bottom: 16px;
+
 }
 
 .buttons {
    display: flex;
-   justify-content: space-between;
-   width: 100vh;
+   flex: 1;
+   padding: 64px;
+   margin-top: 16px;
+   margin-bottom: 16px;
 }
 
-button {
-   background-color: black;
-   color: antiquewhite;
-   border-radius: 16px;
-   padding: 16px;
-   margin-top: 32px;
-   font-size: 32px;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.text {
+.footer {
+   background-color: #3d405b;
+   color: white;
    display: flex;
-   flex-direction: column;
-   align-items: center;
    justify-content: center;
+   align-items: center;
+   font-weight: bold;
+   font-size: 24px;
+   gap: 8px;
+   padding: 24px;
 }
